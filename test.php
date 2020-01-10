@@ -32,9 +32,15 @@ class Test extends TestParent
         }
         
     }
+    
+    public function __toString() {
+        return "to string method";
+    }
 }
 
 echo (new Test())->getTestVarPlus(14) . "\n";
 echo (new Test())->getTestVar() . "\n";
 
 echo (new Test())->getInitial() . "\n";
+
+echo (new Test() . " - String conversion.");
