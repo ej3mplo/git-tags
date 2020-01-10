@@ -33,14 +33,16 @@ class Test extends TestParent
         return $this->testVar+$x;
     }
     
-    protected function getInitial() {
+    public function getInitial() {
         return 0;
     }
 }
 
-echo (new Test())->getTestVarPlus(14) . "\n";
-echo (new Test())->getTestVar() . "\n";
+$x = new Test();
+$referencia = &$x;
+$referenciaTextual = "x";
 
-echo (new Test())->getInitial() . "\n";
-
-echo (new Test() . " - String conversion.");
+echo $referencia->getTestVarPlus(14) . "\n";
+echo $referencia->getTestVar() . "\n";
+echo $$referenciaTextual->getInitial() . "\n";
+echo $$referenciaTextual . " - String conversion.\n";
