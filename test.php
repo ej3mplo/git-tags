@@ -18,7 +18,23 @@ class Test extends TestParent
     public function getTestVarPlus($x) {
         return $this->testVar+$x;
     }
+    
+    protected function getInitial() {
+        return 0;
+    }
+    
+    public function __call($fnName, $fnArgs) {
+        if (method_exists($this, $fnName)){
+            echo "run private or protected {$fnName} ...\n";
+            return $this->$fnName($fnArgs);
+        } else {
+            echo "method not exist!";
+        }
+        
+    }
 }
 
 echo (new Test())->getTestVarPlus(14) . "\n";
 echo (new Test())->getTestVar() . "\n";
+
+echo (new Test())->getInitial() . "\n";
