@@ -37,12 +37,3 @@ class Test extends TestParent
         return 0;
     }
 }
-
-$x = new Test();
-$referencia = &$x;
-$referenciaTextual = "x";
-
-echo $referencia->getTestVarPlus(14) . "\n";
-echo $referencia->getTestVar() . "\n";
-echo $$referenciaTextual->getInitial() . "\n";
-echo $$referenciaTextual . " - String conversion.\n";
