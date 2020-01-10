@@ -37,3 +37,6 @@ class Test extends TestParent
         return 0;
     }
 }
+
+$x = new Test();
+echo $x->getTestVarPlus(10);
