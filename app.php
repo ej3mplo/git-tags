@@ -38,5 +38,6 @@ class Test extends TestParent
     }
 }
 
+echo "Git: Task 1.\n";
 $x = new Test();
 echo $x->getTestVarPlus(10);
